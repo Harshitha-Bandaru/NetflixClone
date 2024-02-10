@@ -1,6 +1,10 @@
+import { Provider } from "react-redux";
+import Browse from "./components/Browse";
 import SigninPage from "./components/SignInPage";
 import SignupPage from "./components/SignupPage";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import store from "./utils/store";
+import Error from "./components/Error";
 
 function App() {
   const router = createBrowserRouter([
@@ -12,11 +16,16 @@ function App() {
       path: "/signin",
       element: <SigninPage />,
     },
+    {
+      path: "/browse",
+      element: <Browse />,
+    },
+    { path: "/error", element: <Error /> },
   ]);
   return (
-    <div>
+    <Provider store={store}>
       <RouterProvider router={router} />
-    </div>
+    </Provider>
   );
 }
 

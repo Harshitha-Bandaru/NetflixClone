@@ -54,6 +54,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 - Signup/SignIn
   - SignIn/SignUp Form
   - redirect to browse page
+  - sign out
+  - user profile
 - Browse(after authentication)
   - Header
   - Main Movie
