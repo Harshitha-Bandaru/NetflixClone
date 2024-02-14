@@ -1,3 +1,41 @@
+### Features
+
+- Signup/SignIn
+  - SignIn/SignUp Form
+  - redirect to browse page
+- Browse(after authentication)
+  - Header
+  - Main Movie
+    - Trailer in the Background
+    - Title & Description
+    - Movie Suggestions
+      - MovieLists\*n
+- NetflixGPT
+  - search bar
+  - Movie suggestions
+
+# Implementation
+
+- Header
+- Routing
+- SignIn Form
+- SignUp Form
+- Form Validation
+- useRef Hook
+- Firebase Setup
+- Deploying our app to production on Firebase
+- SignUp - Firebase
+- Update Profile
+- SignIn - Firebase
+- Redux Store for User login info
+- Sign out - Firebase
+- Forcefully redirect user to signin page when not loggedin
+- Forcefully redirect user to browse page when loggedin
+- Good Practice - Cleanup the function in useEffect on component unmount (unsubscribe - read firebase documentation)
+- fetch data for movies from - TMDB
+- custom hooks
+- Planning for Main Container and Secondary Container
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -48,21 +86,3 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ### Deployment
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### Features
-
-- Signup/SignIn
-  - SignIn/SignUp Form
-  - redirect to browse page
-  - sign out
-  - user profile
-- Browse(after authentication)
-  - Header
-  - Main Movie
-    - Trailer in the Background
-    - Title & Description
-    - Movie Suggestions
-      - MovieLists\*n
-- NetflixGPT
-  - search bar
-  - Movie suggestions
