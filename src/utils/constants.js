@@ -13,3 +13,9 @@ export const NOW_PLAYING_API_URL =
 export const BASE_URL = "https://api.themoviedb.org/3/movie/";
 
 export const IMG_CDN = "https://image.tmdb.org/t/p/w780";
+
+export const lang = [
+  { name: "English", langCode: "en" },
+  { name: "Telugu", langCode: "tel" },
+  { name: "Spanish", langCode: "es" },
+];

@@ -8,10 +8,14 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { useNavigate } from "react-router-dom";
+import { toggleGPTSearchButton } from "../utils/gptSlice";
+import { lang } from "../utils/constants";
+import { changeLanguage } from "../utils/configSlice";
 
 const Header = () => {
   const user = useSelector((store) => store.user);
-  console.log("user", user);
+  // console.log("user", user);
+  const gptSearchButton = useSelector((store) => store.gpt.gptSearchButton);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -43,6 +47,15 @@ const Header = () => {
         // An error happened.
       });
   };
+
+  const handleSearchMovies = () => {
+    dispatch(toggleGPTSearchButton());
+  };
+
+  const handleLanguageChange = (e) => {
+    dispatch(changeLanguage(e.target.value));
+  };
+
   return (
     <div className="flex justify-between py-6 px-12">
       <img src={logo} alt="Netflix Logo" className="w-40 h-12 bg-none" />
@@ -53,17 +66,34 @@ const Header = () => {
           </button>
         </Link>
       ) : (
-        <Link to="/signin">
-          <h2>{user.displayName}</h2>
-          <img src={user.photoURL} alt="user-profile" />
-
+        <div className="flex gap-2">
+          {/* <h2>Hi {user.displayName}</h2> */}
+          {gptSearchButton && (
+            <select
+              className="bg-black text-white font-semibold p-1"
+              onChange={handleLanguageChange}
+            >
+              {lang.map((language) => (
+                <option key={language.langCode} value={language.langCode}>
+                  {language.name}
+                </option>
+              ))}
+            </select>
+          )}
           <button
-            className="text-white bg-red-600 px-3 py-1 font-medium rounded-md"
+            className="bg-purple-600 text-white px-3 py-1 rounded-lg font-medium"
+            onClick={handleSearchMovies}
+          >
+            {gptSearchButton ? "Home" : "Search Movies"}
+          </button>
+          <img src={user.photoURL} alt="user-profile" />
+          <button
+            className="text-white bg-red-600 px-3 py-1 font-medium rounded-lg"
             onClick={handleSignout}
           >
             Sign Out
           </button>
-        </Link>
+        </div>
       )}
     </div>
   );
