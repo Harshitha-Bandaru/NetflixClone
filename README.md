@@ -14,6 +14,11 @@
   - search bar
   - Movie suggestions
 
+### Todo
+
+- Fix CSS
+- Shimmer
+
 # Implementation
 
 - Header

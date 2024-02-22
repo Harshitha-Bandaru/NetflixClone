@@ -2,8 +2,7 @@ export const OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2YjAyNjBlZTk5ZjQ4Y2QyMzE2ZWM3ZDFkMDY4MjRjNSIsInN1YiI6IjY1YzdjZDljYjZjZmYxMDE4NWE1YmU3ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.DyOKoqJeYyFLNeFEtxZFrihgUDd0slxvEVNpQUiqHxI",
+    Authorization: "Bearer " + process.env.REACT_APP_TMDB_API_KEY,
   },
 };
 
@@ -13,6 +12,9 @@ export const NOW_PLAYING_API_URL =
 export const BASE_URL = "https://api.themoviedb.org/3/movie/";
 
 export const IMG_CDN = "https://image.tmdb.org/t/p/w780";
+
+export const DEFAULT_MOVIE_POSTER =
+  "https://eticketsolutions.com/demo/themes/e-ticket/img/movie.jpg";
 
 export const lang = [
   { name: "English", langCode: "en" },
